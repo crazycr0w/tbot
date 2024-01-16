@@ -1,0 +1,44 @@
+from typing import Final
+from telegram import Update
+from telegram.ext import Application,CommandHandler, MessageHandler, filters, ContextTypes
+
+Token: Final = '6443097620:AAESsbA6nsrnhOEz8HPsN4uB0OQ30k7v1jg'
+Username: Final = '@alexa1999_bot'
+
+async def start_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Hello thanks for chatting this is the first text')
+
+## command
+
+async def End_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Thankyou for usinfg this service')
+
+
+async def Help_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Tell me what you need ')
+
+
+async def Custom_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('This is the custom command')
+
+
+# Responses
+
+def handle_response(text: str) -> str:
+    if 'Hello' in text :
+        return 'Hey there '
+
+    if 'How are you' in text :
+        return "I'm good "
+        return "Yourself? "
+
+    if 'Heyy' in text :
+        return 'Heyy  '
+
+    if str in text :
+        return 'heyy '
+
+
+
+
+
